@@ -1,61 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 355" width="300" height="355">
   <style>
-    .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+    .label { font-family: sans-serif; font-size: 15px; fill: #2B2016; font-weight: bold; }
     .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
-    .radius { stroke: #D92626; stroke-width: 1.5; stroke-dasharray: 4,3; }
-    .apothem { stroke: #2563EB; stroke-width: 2; stroke-dasharray: 4,3; }
-    .circle-in { fill: none; stroke: #2563EB; stroke-width: 1.5; }
-    .circle-out { fill: none; stroke: #D92626; stroke-width: 1.5; }
-    .center { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
-    .formula { font-family: sans-serif; font-size: 13px; fill: #2B2016; }
-    .note { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
-    .side-label { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    .circle-R { fill: none; stroke: #E8943A; stroke-width: 2; }
+    .circle-r { fill: #e0f4e8; stroke: #3a8a5c; stroke-width: 2; }
+    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+    .formula-R { font-family: sans-serif; font-size: 14px; fill: #E8943A; font-weight: bold; }
+    .formula-r { font-family: sans-serif; font-size: 14px; fill: #3a8a5c; font-weight: bold; }
+    .formula-S { font-family: sans-serif; font-size: 14px; fill: #2B2016; font-weight: bold; }
+    .title { font-family: sans-serif; font-size: 13px; fill: #9b856a; font-weight: bold; }
   </style>
 
-  <!-- Regular pentagon (n=5) as example, centered at (200,130), R=95 -->
-  <polygon class="shape" points="200,35 290,100 256,200 144,200 110,100" />
+  <!-- Title -->
+  <text class="title" x="30" y="20">Правильний n-кутник (загальний)</text>
 
-  <!-- Circumscribed circle -->
-  <circle class="circle-out" cx="200" cy="130" r="95" />
+  <!-- Regular pentagon (n=5) as example, centered at (150,140), R=100 -->
+  <polygon class="shape" points="150,40 245,112 209,218 91,218 55,112" />
 
-  <!-- Inscribed circle -->
-  <circle class="circle-in" cx="200" cy="130" r="77" />
+  <!-- Circumscribed circle R -->
+  <circle class="circle-R" cx="150" cy="140" r="100" />
+
+  <!-- Inscribed circle r -->
+  <circle class="circle-r" cx="150" cy="140" r="81" />
+
+  <!-- Radius lines from center -->
+  <line stroke="#E8943A" stroke-width="1.5" stroke-dasharray="6,3" x1="150" y1="140" x2="150" y2="40" />
+  <line stroke="#3a8a5c" stroke-width="1.5" stroke-dasharray="4,3" x1="150" y1="140" x2="150" y2="218" />
 
   <!-- Center -->
-  <circle class="center" cx="200" cy="130" r="4" />
+  <circle fill="#E8943A" cx="150" cy="140" r="3" />
 
-  <!-- Radius R to vertex -->
-  <line class="radius" x1="200" y1="130" x2="200" y2="35" />
-
-  <!-- Apothem r to midpoint of bottom side -->
-  <line class="apothem" x1="200" y1="130" x2="200" y2="200" />
-
-  <!-- Central angle -->
-  <path fill="none" stroke="#C97820" stroke-width="1.5" d="M 200,105 A 25,25 0 0,1 218,115" />
-
-  <!-- Vertex labels -->
-  <text class="label" x="192" y="28">A</text>
-  <text class="label" x="295" y="100">B</text>
-  <text class="label" x="260" y="218">C</text>
-  <text class="label" x="122" y="218">D</text>
-  <text class="label" x="88" y="100">E</text>
-
-  <!-- Center label -->
-  <text class="note" x="208" y="126">O</text>
-
-  <!-- Side label -->
-  <text class="side-label" x="195" y="218">a</text>
-
-  <!-- Radius labels -->
-  <text class="side-label" x="205" y="75" style="fill:#D92626;">R</text>
-  <text class="side-label" x="205" y="175" style="fill:#2563EB;">r</text>
-
-  <!-- Central angle label -->
-  <text class="side-label" x="222" y="108">360\u00B0/n</text>
+  <!-- Labels -->
+  <text class="label" x="155" y="85" style="fill:#E8943A;">R</text>
+  <text class="label" x="155" y="190" style="fill:#3a8a5c;">r</text>
+  <text class="label" x="140" y="238">a</text>
 
   <!-- Formulas -->
-  <text class="formula" x="20" y="248">\u03B1 = 180\u00B0(n\u22122)/n,  S = n\u00B7a\u00B7r/2 = P\u00B7r/2</text>
-  <text class="formula" x="20" y="268">r = R\u00B7cos(180\u00B0/n),  a = 2R\u00B7sin(180\u00B0/n)</text>
-  <text class="formula" x="20" y="288">P = n\u00B7a</text>
+  <text class="formula-R" x="20" y="278">R = a / (2·sin(π/n))</text>
+  <text class="formula-r" x="20" y="300">r = a / (2·tan(π/n))</text>
+  <text class="formula-S" x="20" y="322">S = ½·n·a·r</text>
 </svg>

@@ -1,51 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 280" width="450" height="280">
   <style>
     .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
     .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
-    .midline { stroke: #D92626; stroke-width: 2.5; stroke-dasharray: 8,4; }
-    .height { stroke: #2563EB; stroke-width: 2; stroke-dasharray: 5,3; }
+    .midline { stroke: #3a8a5c; stroke-width: 2.5; stroke-dasharray: 8,4; }
+    .height { stroke: #3a6ab8; stroke-width: 2; stroke-dasharray: 5,3; }
     .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
-    .note { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
-    .side-label { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    .note { font-family: sans-serif; font-size: 13px; fill: #3a8a5c; font-weight: bold; }
+    .side-label { font-family: sans-serif; font-size: 14px; fill: #9b856a; font-weight: bold; }
   </style>
 
-  <!-- Trapezoid ABCD -->
-  <polygon class="shape" points="80,200 130,60 300,60 340,200" />
+  <!-- Trapezoid ABCD (AD - більша основа внизу, BC - менша основа вгорі) -->
+  <polygon class="shape" points="60,200 150,60 320,60 380,200" />
 
   <!-- Midline MN -->
-  <line class="midline" x1="105" y1="130" x2="320" y2="130" />
+  <line class="midline" x1="105" y1="130" x2="350" y2="130" />
 
   <!-- Height h -->
-  <line class="height" x1="220" y1="60" x2="220" y2="200" />
+  <line class="height" x1="235" y1="60" x2="235" y2="200" />
 
-  <!-- Right angle mark for height -->
-  <polyline fill="none" stroke="#2563EB" stroke-width="1.5" points="220,190 230,190 230,200" />
-  <polyline fill="none" stroke="#2563EB" stroke-width="1.5" points="220,70 230,70 230,60" />
-
-  <!-- Parallel marks on bases -->
-  <line stroke="#E8943A" stroke-width="2" x1="210" y1="55" x2="220" y2="55" />
-  <line stroke="#E8943A" stroke-width="2" x1="200" y1="195" x2="210" y2="195" />
-  <line stroke="#E8943A" stroke-width="2" x1="215" y1="195" x2="225" y2="195" />
+  <!-- Right angle marks -->
+  <polyline fill="none" stroke="#3a6ab8" stroke-width="1.5" points="235,190 245,190 245,200" />
+  <polyline fill="none" stroke="#3a6ab8" stroke-width="1.5" points="235,70 245,70 245,60" />
 
   <!-- Vertex labels -->
-  <text class="label" x="60" y="218">A</text>
-  <text class="label" x="115" y="50">B</text>
-  <text class="label" x="305" y="50">C</text>
-  <text class="label" x="345" y="218">D</text>
+  <text class="label" x="40" y="218">A</text>
+  <text class="label" x="135" y="50">B</text>
+  <text class="label" x="325" y="50">C</text>
+  <text class="label" x="385" y="218">D</text>
 
   <!-- Midpoint labels -->
-  <text class="note" x="85" y="125">M</text>
-  <text class="note" x="325" y="125">N</text>
+  <text class="label" style="fill:#3a8a5c;" x="85" y="125">M</text>
+  <text class="label" style="fill:#3a8a5c;" x="355" y="125">N</text>
 
   <!-- Side labels -->
-  <text class="side-label" x="190" y="50">a</text>
-  <text class="side-label" x="190" y="220">b</text>
-  <text class="side-label" x="195" y="145">m</text>
+  <text class="side-label" x="200" y="50">b  (менша основа)</text>
+  <text class="side-label" x="170" y="222">a  (більша основа)</text>
+
+  <!-- Midline label -->
+  <text class="note" x="185" y="148">m = (a + b) / 2</text>
 
   <!-- Height label -->
-  <text class="side-label" x="228" y="138" style="fill:#2563EB;">h</text>
+  <text class="side-label" x="243" y="138" style="fill:#3a6ab8;">h</text>
 
-  <!-- Formula -->
-  <text class="formula" x="40" y="260">m = (a+b)/2,   S = m*h = (a+b)*h/2</text>
+  <!-- Additional label -->
+  <text class="side-label" x="345" y="168" style="fill:#9b856a;">(a − b) / 2</text>
 </svg>

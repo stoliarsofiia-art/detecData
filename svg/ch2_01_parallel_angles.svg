@@ -1,52 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 300" width="560" height="300">
   <style>
     .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+    .num-label { font-family: sans-serif; font-size: 15px; fill: #2B2016; font-weight: bold; }
     .line-main { stroke: #E8943A; stroke-width: 2.5; }
     .line-trans { stroke: #2563EB; stroke-width: 2.5; }
-    .angle-arc { fill: none; stroke-width: 2; }
-    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
-    .note { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
-    .side-label { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    .arc { fill: none; stroke-width: 1.8; stroke-linejoin: miter; }
+    .formula { font-family: sans-serif; font-size: 13px; fill: #2B2016; }
+    .formula-title { font-family: sans-serif; font-size: 13px; fill: #2B2016; font-weight: bold; }
   </style>
 
-  <!-- Parallel line 1 (top) -->
-  <line class="line-main" x1="30" y1="80" x2="370" y2="80" />
-  <!-- Parallel line 2 (bottom) -->
-  <line class="line-main" x1="30" y1="200" x2="370" y2="200" />
+  <!-- Parallel line a (top) -->
+  <line class="line-main" x1="20" y1="100" x2="280" y2="100" />
+  <!-- Parallel line b (bottom) -->
+  <line class="line-main" x1="20" y1="200" x2="280" y2="200" />
+  <!-- Transversal c -->
+  <line class="line-trans" x1="100" y1="30" x2="220" y2="270" />
 
-  <!-- Transversal -->
-  <line class="line-trans" x1="120" y1="20" x2="280" y2="260" />
+  <!-- Intersection point on line a -->
+  <circle fill="#E8943A" cx="140" cy="100" r="3" />
+  <!-- Intersection point on line b -->
+  <circle fill="#E8943A" cx="180" cy="200" r="3" />
 
-  <!-- Parallel arrows -->
-  <text class="side-label" x="375" y="78">a</text>
-  <text class="side-label" x="375" y="198">b</text>
+  <!-- Angle arcs at top intersection (8 angles: 1-4) -->
+  <!-- Angle 1: top-right above line a -->
+  <path class="arc" stroke="#b83a3a" d="M 160,100 A 20,20 0 0,0 147,83" />
+  <!-- Angle 2: top-left above line a -->
+  <path class="arc" stroke="#3a6ab8" d="M 147,83 A 20,20 0 0,0 120,100" />
+  <!-- Angle 3: bottom-left below line a -->
+  <path class="arc" stroke="#3a8a5c" d="M 120,100 A 20,20 0 0,0 133,117" />
+  <!-- Angle 4: bottom-right below line a -->
+  <path class="arc" stroke="#E8943A" d="M 133,117 A 20,20 0 0,0 160,100" />
 
-  <!-- Angle arcs at top intersection -->
-  <path class="angle-arc" stroke="#D92626" d="M 190,80 A 20,20 0 0,1 173,67" />
-  <path class="angle-arc" stroke="#16A34A" d="M 173,93 A 20,20 0 0,1 190,80" />
+  <!-- Angle arcs at bottom intersection (8 angles: 5-8) -->
+  <!-- Angle 5: top-right above line b -->
+  <path class="arc" stroke="#b83a3a" d="M 200,200 A 20,20 0 0,0 187,183" />
+  <!-- Angle 6: top-left above line b -->
+  <path class="arc" stroke="#3a6ab8" d="M 187,183 A 20,20 0 0,0 160,200" />
+  <!-- Angle 7: bottom-left below line b -->
+  <path class="arc" stroke="#3a8a5c" d="M 160,200 A 20,20 0 0,0 173,217" />
+  <!-- Angle 8: bottom-right below line b -->
+  <path class="arc" stroke="#E8943A" d="M 173,217 A 20,20 0 0,0 200,200" />
 
-  <!-- Angle arcs at bottom intersection -->
-  <path class="angle-arc" stroke="#D92626" d="M 250,200 A 20,20 0 0,1 233,187" />
-  <path class="angle-arc" stroke="#16A34A" d="M 233,213 A 20,20 0 0,1 250,200" />
+  <!-- Angle number labels at top -->
+  <text class="num-label" x="155" y="90">1</text>
+  <text class="num-label" x="118" y="90">2</text>
+  <text class="num-label" x="118" y="122">3</text>
+  <text class="num-label" x="155" y="122">4</text>
 
-  <!-- Angle labels at top -->
-  <text class="label" style="fill:#D92626; font-size:16px;" x="178" y="62">1</text>
-  <text class="label" style="fill:#16A34A; font-size:16px;" x="155" y="108">2</text>
+  <!-- Angle number labels at bottom -->
+  <text class="num-label" x="195" y="190">5</text>
+  <text class="num-label" x="158" y="190">6</text>
+  <text class="num-label" x="158" y="222">7</text>
+  <text class="num-label" x="195" y="222">8</text>
 
-  <!-- Angle labels at bottom -->
-  <text class="label" style="fill:#D92626; font-size:16px;" x="238" y="182">1</text>
-  <text class="label" style="fill:#16A34A; font-size:16px;" x="215" y="228">2</text>
+  <!-- Line labels -->
+  <text class="label" x="8" y="96">a</text>
+  <text class="label" x="8" y="196">b</text>
+  <text class="label" x="222" y="268">c</text>
 
-  <!-- Intersection points -->
-  <circle fill="#E8943A" cx="183" cy="80" r="4" />
-  <circle fill="#E8943A" cx="243" cy="200" r="4" />
+  <!-- Formulas on the right side -->
+  <text class="formula-title" x="300" y="65">Відповідні (рівні):</text>
+  <text class="formula" x="300" y="85">∠1=∠5, ∠2=∠6, ∠3=∠7, ∠4=∠8</text>
 
-  <!-- Labels for lines -->
-  <text class="label" x="15" y="75">a</text>
-  <text class="label" x="15" y="195">b</text>
-  <text class="label" x="285" y="258">c</text>
+  <text class="formula-title" x="300" y="125">Внутрішні різносторонні (рівні):</text>
+  <text class="formula" x="300" y="145">∠3=∠6,  ∠4=∠5</text>
 
-  <!-- Formulas -->
-  <text class="formula" x="20" y="268">a || b: Відповідні кути рівні; Сума сусідніх = 180°</text>
+  <text class="formula-title" x="300" y="185">Внутрішні односторонні (=180°):</text>
+  <text class="formula" x="300" y="205">∠3+∠5=180°,  ∠4+∠6=180°</text>
 </svg>

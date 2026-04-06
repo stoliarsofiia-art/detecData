@@ -1,54 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 310" width="340" height="310">
   <style>
     .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
     .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
-    .circle-line { fill: none; stroke: #2563EB; stroke-width: 2; }
-    .center { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
-    .radius { stroke: #D92626; stroke-width: 1.5; stroke-dasharray: 4,3; }
-    .tangent-point { fill: #2563EB; }
-    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
-    .note { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
-    .side-label { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    .circle-line { fill: none; stroke: #3a8a5c; stroke-width: 2; }
+    .circle-fill { fill: #e0f4e8; stroke: #3a8a5c; stroke-width: 2; }
+    .formula { font-family: sans-serif; font-size: 15px; fill: #2B2016; font-weight: bold; }
+    .sub { font-family: sans-serif; font-size: 13px; fill: #3a8a5c; }
+    .side-label { font-family: sans-serif; font-size: 15px; fill: #2B2016; font-weight: bold; }
   </style>
 
   <!-- Quadrilateral ABCD -->
-  <polygon class="shape" points="70,180 120,50 320,60 350,200" />
+  <polygon class="shape" points="50,210 100,40 280,50 300,230" />
 
   <!-- Inscribed circle -->
-  <circle class="circle-line" cx="200" cy="130" r="68" />
-
-  <!-- Incenter -->
-  <circle class="center" cx="200" cy="130" r="4" />
-
-  <!-- Radius to bottom tangent -->
-  <line class="radius" x1="200" y1="130" x2="200" y2="198" />
-
-  <!-- Tangent points -->
-  <circle class="tangent-point" cx="200" cy="198" r="3" />
-  <circle class="tangent-point" cx="135" cy="108" r="3" />
-  <circle class="tangent-point" cx="265" cy="108" r="3" />
-  <circle class="tangent-point" cx="212" cy="62" r="3" />
-
-  <!-- Vertex labels -->
-  <text class="label" x="48" y="192">A</text>
-  <text class="label" x="105" y="42">B</text>
-  <text class="label" x="325" y="50">C</text>
-  <text class="label" x="355" y="215">D</text>
-
-  <!-- Center label -->
-  <text class="note" x="208" y="126">I</text>
-
-  <!-- Radius label -->
-  <text class="side-label" x="205" y="172" style="fill:#D92626;">r</text>
+  <circle class="circle-fill" cx="175" cy="140" r="72" />
 
   <!-- Side labels -->
-  <text class="side-label" x="75" y="110">a</text>
-  <text class="side-label" x="210" y="42">b</text>
-  <text class="side-label" x="345" y="125">c</text>
-  <text class="side-label" x="200" y="218">d</text>
+  <text class="side-label" x="55" y="120">a</text>
+  <text class="side-label" x="180" y="30">b</text>
+  <text class="side-label" x="300" y="135">c</text>
+  <text class="side-label" x="165" y="240">d</text>
+
+  <!-- Vertex labels -->
+  <text class="label" x="28" y="225">A</text>
+  <text class="label" x="85" y="30">B</text>
+  <text class="label" x="285" y="38">C</text>
+  <text class="label" x="305" y="248">D</text>
 
   <!-- Formula -->
-  <text class="formula" x="50" y="260">a + c = b + d</text>
-  <text class="formula" x="50" y="280">(Умова вписаного кола в чотирикутник)</text>
+  <text class="formula" x="70" y="278">a + c  =  b + d</text>
+
+  <!-- Subtitle -->
+  <text class="sub" x="100" y="298">Вписане коло</text>
 </svg>

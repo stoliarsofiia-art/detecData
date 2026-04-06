@@ -1,48 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 310" width="340" height="310">
   <style>
     .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
     .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
-    .circle-line { fill: none; stroke: #D92626; stroke-width: 2; }
-    .center { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
-    .radius { stroke: #D92626; stroke-width: 1.5; stroke-dasharray: 4,3; }
-    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
-    .note { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
-    .side-label { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
-    .angle-label { font-family: serif; font-size: 15px; fill: #2563EB; font-style: italic; }
+    .circle-line { fill: none; stroke: #3a6ab8; stroke-width: 2; }
+    .angle-label { font-family: serif; font-size: 16px; fill: #3a6ab8; font-style: italic; }
+    .formula { font-family: sans-serif; font-size: 15px; fill: #2B2016; font-weight: bold; }
+    .sub { font-family: sans-serif; font-size: 13px; fill: #3a6ab8; }
   </style>
 
   <!-- Circumscribed circle -->
-  <circle class="circle-line" cx="200" cy="135" r="110" />
+  <circle class="circle-line" cx="175" cy="135" r="115" />
 
-  <!-- Quadrilateral inscribed in circle -->
-  <polygon class="shape" points="95,175 120,45 330,85 305,230" />
-
-  <!-- Center O -->
-  <circle class="center" cx="200" cy="135" r="4" />
-
-  <!-- Radii to vertices -->
-  <line class="radius" x1="200" y1="135" x2="95" y2="175" />
-  <line class="radius" x1="200" y1="135" x2="305" y2="230" />
+  <!-- Quadrilateral ABCD inscribed in circle -->
+  <polygon class="shape" points="65,185 95,40 300,75 280,240" />
 
   <!-- Vertex labels -->
-  <text class="label" x="72" y="185">A</text>
-  <text class="label" x="108" y="38">B</text>
-  <text class="label" x="335" y="82">C</text>
-  <text class="label" x="310" y="248">D</text>
-
-  <!-- Center label -->
-  <text class="note" x="208" y="130">O</text>
+  <text class="label" x="40" y="198">A</text>
+  <text class="label" x="78" y="30">B</text>
+  <text class="label" x="305" y="68">C</text>
+  <text class="label" x="285" y="258">D</text>
 
   <!-- Angle labels -->
-  <text class="angle-label" x="112" y="170">\u03B1</text>
-  <text class="angle-label" x="135" y="62">\u03B2</text>
-  <text class="angle-label" x="315" y="100">\u03B3</text>
-  <text class="angle-label" x="292" y="222">\u03B4</text>
-
-  <!-- Radius label -->
-  <text class="side-label" x="145" y="162" style="fill:#D92626;">R</text>
+  <text class="angle-label" x="82" y="178">α</text>
+  <text class="angle-label" x="112" y="58">β</text>
+  <text class="angle-label" x="282" y="92">γ</text>
+  <text class="angle-label" x="268" y="230">δ</text>
 
   <!-- Formula -->
-  <text class="formula" x="40" y="275">\u03B1 + \u03B3 = \u03B2 + \u03B4 = 180° (вписаний чотирикутник)</text>
+  <text class="formula" x="30" y="278">α + γ  =  β + δ  =  180°</text>
+
+  <!-- Subtitle -->
+  <text class="sub" x="105" y="298">Описане коло</text>
 </svg>
