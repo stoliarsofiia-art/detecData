@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <style>
+    .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+    .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+    .radius { stroke: #D92626; stroke-width: 1.5; stroke-dasharray: 4,3; }
+    .apothem { stroke: #2563EB; stroke-width: 1.5; stroke-dasharray: 4,3; }
+    .circle-in { fill: none; stroke: #2563EB; stroke-width: 1.5; }
+    .circle-out { fill: none; stroke: #D92626; stroke-width: 1.5; }
+    .center { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
+    .formula { font-family: sans-serif; font-size: 13px; fill: #2B2016; }
+    .note { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+    .side-label { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+  </style>
+
+  <!-- Regular hexagon centered at (200,140), R=100 -->
+  <polygon class="shape" points="300,140 250,227 150,227 100,140 150,53 250,53" />
+
+  <!-- Circumscribed circle -->
+  <circle class="circle-out" cx="200" cy="140" r="100" />
+
+  <!-- Inscribed circle -->
+  <circle class="circle-in" cx="200" cy="140" r="87" />
+
+  <!-- Center -->
+  <circle class="center" cx="200" cy="140" r="4" />
+
+  <!-- Radius to vertex -->
+  <line class="radius" x1="200" y1="140" x2="300" y2="140" />
+
+  <!-- Apothem to midpoint of side -->
+  <line class="apothem" x1="200" y1="140" x2="250" y2="53" />
+
+  <!-- Internal triangle -->
+  <line stroke="#C97820" stroke-width="1" x1="200" y1="140" x2="250" y2="53" />
+  <line stroke="#C97820" stroke-width="1" x1="200" y1="140" x2="150" y2="53" />
+
+  <!-- Vertex labels -->
+  <text class="label" x="305" y="145">A</text>
+  <text class="label" x="252" y="245">B</text>
+  <text class="label" x="128" y="245">C</text>
+  <text class="label" x="78" y="145">D</text>
+  <text class="label" x="128" y="46">E</text>
+  <text class="label" x="252" y="46">F</text>
+
+  <!-- Center label -->
+  <text class="note" x="208" y="136">O</text>
+
+  <!-- Side label -->
+  <text class="side-label" x="195" y="46">a</text>
+
+  <!-- Radius label -->
+  <text class="side-label" x="250" y="135" style="fill:#D92626;">R</text>
+
+  <!-- Apothem label -->
+  <text class="side-label" x="230" y="90" style="fill:#2563EB;">r</text>
+
+  <!-- Formulas -->
+  <text class="formula" x="20" y="268">R = a,  r = a\u221A3/2,  S = 3a\u00B2\u221A3/2</text>
+  <text class="formula" x="20" y="288">P = 6a,  \u03B1 = 120\u00B0</text>
+</svg>
