@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250">
+  <style>
+    .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+    .side-label { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+    .midline { stroke: #D92626; stroke-width: 2.5; stroke-dasharray: 8,4; }
+    .midpoint { fill: #D92626; }
+    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+    .note { font-family: sans-serif; font-size: 13px; fill: #D92626; }
+  </style>
+
+  <!-- Triangle ABC -->
+  <polygon class="shape" points="50,200 200,30 350,200" />
+
+  <!-- Midpoints M and N -->
+  <circle class="midpoint" cx="125" cy="115" r="4" />
+  <circle class="midpoint" cx="275" cy="115" r="4" />
+
+  <!-- Midline MN -->
+  <line class="midline" x1="125" y1="115" x2="275" y2="115" />
+
+  <!-- Vertex labels -->
+  <text class="label" x="35" y="218">A</text>
+  <text class="label" x="193" y="22">B</text>
+  <text class="label" x="355" y="218">C</text>
+
+  <!-- Midpoint labels -->
+  <text class="label" x="105" y="108">M</text>
+  <text class="label" x="280" y="108">N</text>
+
+  <!-- Side labels -->
+  <text class="side-label" x="190" y="218">AC</text>
+
+  <!-- Midline label -->
+  <text class="note" x="175" y="140">MN</text>
+
+  <!-- Formula -->
+  <text class="formula" x="100" y="245">MN ∥ AC,  MN = AC / 2</text>
+</svg>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 250" width="420" height="250">
+  <style>
+    .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+    .side-label { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+    .projection { stroke: #9333EA; stroke-width: 2; }
+    .proj-line { stroke: #9333EA; stroke-width: 1.5; stroke-dasharray: 5,3; }
+    .right-angle { fill: none; stroke: #9333EA; stroke-width: 1.5; }
+    .foot { fill: #9333EA; }
+    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+    .proj-label { font-family: sans-serif; font-size: 13px; fill: #9333EA; font-weight: bold; }
+  </style>
+
+  <!-- Base line -->
+  <line x1="40" y1="180" x2="390" y2="180" stroke="#2B2016" stroke-width="2" />
+
+  <!-- Triangle -->
+  <polygon class="shape" points="80,180 230,40 340,180" />
+
+  <!-- Height from B to AC -->
+  <line class="proj-line" x1="230" y1="40" x2="230" y2="180" />
+
+  <!-- Right angle mark -->
+  <polyline class="right-angle" points="220,180 220,170 230,170" />
+
+  <!-- Foot point -->
+  <circle class="foot" cx="230" cy="180" r="3" />
+
+  <!-- Projection segments on base -->
+  <line class="projection" x1="80" y1="186" x2="230" y2="186" />
+  <line class="projection" x1="230" y1="186" x2="340" y2="186" />
+
+  <!-- Vertex labels -->
+  <text class="label" x="62" y="175">A</text>
+  <text class="label" x="223" y="32">B</text>
+  <text class="label" x="345" y="175">C</text>
+
+  <!-- Foot label -->
+  <text class="label" x="225" y="200">H</text>
+
+  <!-- Projection labels -->
+  <text class="proj-label" x="140" y="205">proj_AC(AB)</text>
+  <text class="proj-label" x="270" y="205">proj_AC(BC)</text>
+
+  <!-- Height label -->
+  <text class="side-label" x="235" y="115" style="fill: #9333EA;">h</text>
+
+  <!-- Formula -->
+  <text class="formula" x="40" y="240">AH = c·cos A,  CH = a·cos C</text>
+</svg>

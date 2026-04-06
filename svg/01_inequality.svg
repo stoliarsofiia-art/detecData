@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <style>
+    .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+    .side-label { font-family: sans-serif; font-size: 15px; fill: #C97820; font-weight: bold; }
+    .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+  </style>
+
+  <!-- Triangle -->
+  <polygon class="shape" points="60,160 200,30 340,160" />
+
+  <!-- Vertex labels -->
+  <text class="label" x="45" y="175">A</text>
+  <text class="label" x="195" y="22">B</text>
+  <text class="label" x="345" y="175">C</text>
+
+  <!-- Side labels -->
+  <text class="side-label" x="110" y="82" transform="rotate(-47, 110, 82)">c</text>
+  <text class="side-label" x="280" y="82" transform="rotate(47, 280, 82)">a</text>
+  <text class="side-label" x="195" y="180">b</text>
+
+  <!-- Inequality formulas -->
+  <text class="formula" x="50" y="198">|a − b| &lt; c &lt; a + b</text>
+</svg>
