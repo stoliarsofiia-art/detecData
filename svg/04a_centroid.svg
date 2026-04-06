@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 270" width="400" height="270">
+  <style>
+    .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+    .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+    .median { stroke: #2563EB; stroke-width: 2; }
+    .centroid { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
+    .midpoint { fill: #2563EB; }
+    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+    .note { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+  </style>
+
+  <!-- Triangle ABC -->
+  <polygon class="shape" points="50,220 200,30 350,220" />
+
+  <!-- Midpoints of sides -->
+  <circle class="midpoint" cx="125" cy="125" r="3" />
+  <circle class="midpoint" cx="275" cy="125" r="3" />
+  <circle class="midpoint" cx="200" cy="220" r="3" />
+
+  <!-- Medians -->
+  <line class="median" x1="50" y1="220" x2="275" y2="125" />
+  <line class="median" x1="200" y1="30" x2="200" y2="220" />
+  <line class="median" x1="350" y1="220" x2="125" y2="125" />
+
+  <!-- Centroid point G -->
+  <circle class="centroid" cx="200" cy="157" r="6" />
+
+  <!-- Vertex labels -->
+  <text class="label" x="30" y="235">A</text>
+  <text class="label" x="193" y="22">B</text>
+  <text class="label" x="355" y="235">C</text>
+
+  <!-- Midpoint labels -->
+  <text class="label" x="105" y="118">M_a</text>
+  <text class="label" x="280" y="118">M_c</text>
+  <text class="label" x="205" y="238">M_b</text>
+
+  <!-- Centroid label -->
+  <text class="note" x="210" y="155">G</text>
+
+  <!-- Formula -->
+  <text class="formula" x="70" y="265">G ділить медіану 2:1 від вершини</text>
+</svg>

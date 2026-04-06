@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 220" width="450" height="220">
+  <style>
+    .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+    .side-label { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+    .shape2 { fill: #E8D5F5; stroke: #8B5CF6; stroke-width: 2.5; stroke-linejoin: round; }
+    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+    .label2 { font-family: serif; font-size: 18px; font-style: italic; fill: #5B21B6; }
+    .side-label2 { font-family: sans-serif; font-size: 14px; fill: #8B5CF6; font-weight: bold; }
+  </style>
+
+  <!-- Large triangle -->
+  <polygon class="shape" points="30,180 150,30 270,180" />
+
+  <!-- Large triangle labels -->
+  <text class="label" x="15" y="195">A</text>
+  <text class="label" x="145" y="22">B</text>
+  <text class="label" x="275" y="195">C</text>
+
+  <!-- Large triangle side labels -->
+  <text class="side-label" x="72" y="95" transform="rotate(-56, 72, 95)">c</text>
+  <text class="side-label" x="225" y="95" transform="rotate(56, 225, 95)">a</text>
+  <text class="side-label" x="145" y="198">b</text>
+
+  <!-- Small triangle (similar) -->
+  <polygon class="shape2" points="300,180 370,90 440,180" />
+
+  <!-- Small triangle labels -->
+  <text class="label2" x="285" y="195">A'</text>
+  <text class="label2" x="363" y="82">B'</text>
+  <text class="label2" x="443" y="195">C'</text>
+
+  <!-- Small triangle side labels -->
+  <text class="side-label2" x="323" y="130" transform="rotate(-53, 323, 130)">c'</text>
+  <text class="side-label2" x="415" y="130" transform="rotate(53, 415, 130)">a'</text>
+  <text class="side-label2" x="367" y="198">b'</text>
+
+  <!-- Similarity symbol -->
+  <text class="formula" x="120" y="215">a/a' = b/b' = c/c' = k</text>
+</svg>

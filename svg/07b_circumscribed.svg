@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+  <style>
+    .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+    .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+    .circle-line { fill: none; stroke: #D92626; stroke-width: 2; }
+    .center { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
+    .radius { stroke: #D92626; stroke-width: 1.5; stroke-dasharray: 4,3; }
+    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+    .note { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+    .side-label { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+  </style>
+
+  <!-- Circumscribed circle -->
+  <circle class="circle-line" cx="200" cy="130" r="115" />
+
+  <!-- Triangle inscribed in circle -->
+  <polygon class="shape" points="90,190 200,18 330,200" />
+
+  <!-- Center O -->
+  <circle class="center" cx="200" cy="130" r="5" />
+
+  <!-- Radii to vertices -->
+  <line class="radius" x1="200" y1="130" x2="90" y2="190" />
+  <line class="radius" x1="200" y1="130" x2="200" y2="18" />
+  <line class="radius" x1="200" y1="130" x2="330" y2="200" />
+
+  <!-- Vertex labels -->
+  <text class="label" x="70" y="205">A</text>
+  <text class="label" x="193" y="12">B</text>
+  <text class="label" x="335" y="215">C</text>
+
+  <!-- Center label -->
+  <text class="note" x="208" y="125">O</text>
+
+  <!-- Radius label -->
+  <text class="side-label" x="205" y="78" style="fill: #D92626;">R</text>
+
+  <!-- Side labels -->
+  <text class="side-label" x="130" y="95">a</text>
+  <text class="side-label" x="275" y="100">b</text>
+  <text class="side-label" x="200" y="215">c</text>
+
+  <!-- Formula -->
+  <text class="formula" x="50" y="268">R = abc / (4S),  OA = OB = OC = R</text>
+</svg>

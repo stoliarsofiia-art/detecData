@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 270" width="400" height="270">
+  <style>
+    .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+    .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+    .altitude { stroke: #9333EA; stroke-width: 2; }
+    .right-angle { fill: none; stroke: #9333EA; stroke-width: 1.5; }
+    .center { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
+    .foot { fill: #9333EA; }
+    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+    .note { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+  </style>
+
+  <!-- Triangle ABC (acute) -->
+  <polygon class="shape" points="60,210 180,30 360,210" />
+
+  <!-- Altitude from A to BC -->
+  <line class="altitude" x1="60" y1="210" x2="252" y2="72" />
+  <circle class="foot" cx="252" cy="72" r="3" />
+
+  <!-- Altitude from B to AC -->
+  <line class="altitude" x1="180" y1="30" x2="180" y2="210" />
+  <circle class="foot" cx="180" cy="210" r="3" />
+
+  <!-- Altitude from C to AB -->
+  <line class="altitude" x1="360" y1="210" x2="132" y2="99" />
+  <circle class="foot" cx="132" cy="99" r="3" />
+
+  <!-- Right angle marks -->
+  <rect class="right-angle" x="245" y="65" width="10" height="10" transform="rotate(45, 252, 72)" />
+
+  <!-- Orthocenter H -->
+  <circle class="center" cx="180" cy="140" r="6" />
+
+  <!-- Vertex labels -->
+  <text class="label" x="40" y="228">A</text>
+  <text class="label" x="173" y="22">B</text>
+  <text class="label" x="365" y="228">C</text>
+
+  <!-- Foot labels -->
+  <text class="label" x="258" y="65">H_a</text>
+  <text class="label" x="185" y="228">H_b</text>
+  <text class="label" x="112" y="95">H_c</text>
+
+  <!-- Orthocenter label -->
+  <text class="note" x="190" y="138">H</text>
+
+  <!-- Formula -->
+  <text class="formula" x="60" y="260">H — перетин висот трикутника</text>
+</svg>
