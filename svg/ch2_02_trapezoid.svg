@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+  <style>
+    .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+    .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+    .midline { stroke: #D92626; stroke-width: 2.5; stroke-dasharray: 8,4; }
+    .height { stroke: #2563EB; stroke-width: 2; stroke-dasharray: 5,3; }
+    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+    .note { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+    .side-label { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+  </style>
+
+  <!-- Trapezoid ABCD -->
+  <polygon class="shape" points="80,200 130,60 300,60 340,200" />
+
+  <!-- Midline MN -->
+  <line class="midline" x1="105" y1="130" x2="320" y2="130" />
+
+  <!-- Height h -->
+  <line class="height" x1="220" y1="60" x2="220" y2="200" />
+
+  <!-- Right angle mark for height -->
+  <polyline fill="none" stroke="#2563EB" stroke-width="1.5" points="220,190 230,190 230,200" />
+  <polyline fill="none" stroke="#2563EB" stroke-width="1.5" points="220,70 230,70 230,60" />
+
+  <!-- Parallel marks on bases -->
+  <line stroke="#E8943A" stroke-width="2" x1="210" y1="55" x2="220" y2="55" />
+  <line stroke="#E8943A" stroke-width="2" x1="200" y1="195" x2="210" y2="195" />
+  <line stroke="#E8943A" stroke-width="2" x1="215" y1="195" x2="225" y2="195" />
+
+  <!-- Vertex labels -->
+  <text class="label" x="60" y="218">A</text>
+  <text class="label" x="115" y="50">B</text>
+  <text class="label" x="305" y="50">C</text>
+  <text class="label" x="345" y="218">D</text>
+
+  <!-- Midpoint labels -->
+  <text class="note" x="85" y="125">M</text>
+  <text class="note" x="325" y="125">N</text>
+
+  <!-- Side labels -->
+  <text class="side-label" x="190" y="50">a</text>
+  <text class="side-label" x="190" y="220">b</text>
+  <text class="side-label" x="195" y="145">m</text>
+
+  <!-- Height label -->
+  <text class="side-label" x="228" y="138" style="fill:#2563EB;">h</text>
+
+  <!-- Formula -->
+  <text class="formula" x="40" y="260">m = (a+b)/2,   S = m*h = (a+b)*h/2</text>
+</svg>

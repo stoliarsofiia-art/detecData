@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+  <style>
+    .label { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+    .shape { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+    .circle-line { fill: none; stroke: #D92626; stroke-width: 2; }
+    .center { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
+    .radius { stroke: #D92626; stroke-width: 1.5; stroke-dasharray: 4,3; }
+    .height { stroke: #2563EB; stroke-width: 2; stroke-dasharray: 5,3; }
+    .formula { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+    .note { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+    .side-label { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+  </style>
+
+  <!-- Circumscribed circle -->
+  <circle class="circle-line" cx="200" cy="115" r="105" />
+
+  <!-- Triangle -->
+  <polygon class="shape" points="100,175 200,12 330,185" />
+
+  <!-- Center O -->
+  <circle class="center" cx="200" cy="115" r="4" />
+
+  <!-- Radius to vertex B -->
+  <line class="radius" x1="200" y1="115" x2="200" y2="12" />
+
+  <!-- Height from B to AC -->
+  <line class="height" x1="200" y1="12" x2="200" y2="179" />
+
+  <!-- Right angle at foot of height -->
+  <polyline fill="none" stroke="#2563EB" stroke-width="1.5" points="200,169 210,169 210,179" />
+
+  <!-- Vertex labels -->
+  <text class="label" x="78" y="190">A</text>
+  <text class="label" x="193" y="8">B</text>
+  <text class="label" x="335" y="200">C</text>
+
+  <!-- Center label -->
+  <text class="note" x="208" y="110">O</text>
+
+  <!-- Height foot label -->
+  <text class="label" x="205" y="195">H</text>
+
+  <!-- Side labels -->
+  <text class="side-label" x="135" y="85">a</text>
+  <text class="side-label" x="275" y="90">b</text>
+  <text class="side-label" x="210" y="200">c</text>
+
+  <!-- Radius label -->
+  <text class="side-label" x="205" y="68" style="fill:#D92626;">R</text>
+
+  <!-- Height label -->
+  <text class="side-label" x="180" y="110" style="fill:#2563EB;">h</text>
+
+  <!-- Formulas -->
+  <text class="formula" x="40" y="240">S = abc / (4R)</text>
+  <text class="formula" x="40" y="260">S = (1/2) \u00B7 c \u00B7 h</text>
+</svg>

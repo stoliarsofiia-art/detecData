@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abitlly — Чіткод #2: Багатокутники та Кола</title>
+<style>
+  body { font-family: sans-serif; background: #FDF6EE; padding: 30px; max-width: 900px; margin: 0 auto; }
+  h1 { color: #C97820; }
+  .card { background: white; border: 1px solid #F0D8BE; border-radius: 12px;
+          padding: 20px; margin: 20px 0; }
+  .card svg { max-width: 100%; height: auto; border: 1px solid #eee; border-radius: 8px; background: white; }
+  .btn { display: inline-block; margin-top: 12px; padding: 10px 22px;
+         background: #E8943A; color: white; border-radius: 8px;
+         text-decoration: none; font-weight: bold; font-size: 14px; cursor: pointer; border: none; }
+  .btn:hover { background: #C97820; }
+  h2 { color: #2B2016; font-size: 16px; margin-bottom: 8px; }
+  .info { background: #FEF3C7; border: 1px solid #F59E0B; border-radius: 8px; padding: 12px 16px;
+          margin: 16px 0; font-size: 14px; color: #92400E; }
+  .nav { text-align: center; margin: 20px 0; }
+  .nav a { color: #C97820; font-weight: bold; text-decoration: none; }
+  .nav a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Abitlly · НМТ Математика · Чіткод #2 — Багатокутники та Кола</h1>
+<div class="nav"><a href="index.html">← Чітшит #1 — Трикутники</a></div>
+<p>Натисни <strong>«Завантажити SVG»</strong> під кожним малюнком, щоб зберегти його як .svg файл.</p>
+<div class="info">
+  Кожна буква-позначення — окремий <code>&lt;text&gt;</code> елемент. Щоб змінити положення букви,
+  відкрий SVG файл у текстовому редакторі або Inkscape і зміни атрибути <code>x</code> та <code>y</code>.
+</div>
+
+<!-- 01 Кути при паралельних прямих -->
+<div class="card">
+  <h2>01. Кути при паралельних прямих</h2>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+    <style>
+      .label-c01 { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+      .line-main-c01 { stroke: #E8943A; stroke-width: 2.5; }
+      .line-trans-c01 { stroke: #2563EB; stroke-width: 2.5; }
+      .angle-arc-c01 { fill: none; stroke-width: 2; }
+      .formula-c01 { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+      .side-label-c01 { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    </style>
+    <!-- Parallel line 1 (top) -->
+    <line class="line-main-c01" x1="30" y1="80" x2="370" y2="80" />
+    <!-- Parallel line 2 (bottom) -->
+    <line class="line-main-c01" x1="30" y1="200" x2="370" y2="200" />
+    <!-- Transversal -->
+    <line class="line-trans-c01" x1="120" y1="20" x2="280" y2="260" />
+    <!-- Angle arcs at top intersection -->
+    <path class="angle-arc-c01" stroke="#D92626" d="M 190,80 A 20,20 0 0,1 173,67" />
+    <path class="angle-arc-c01" stroke="#16A34A" d="M 173,93 A 20,20 0 0,1 190,80" />
+    <!-- Angle arcs at bottom intersection -->
+    <path class="angle-arc-c01" stroke="#D92626" d="M 250,200 A 20,20 0 0,1 233,187" />
+    <path class="angle-arc-c01" stroke="#16A34A" d="M 233,213 A 20,20 0 0,1 250,200" />
+    <!-- Angle labels at top -->
+    <text class="label-c01" style="fill:#D92626; font-size:16px;" x="178" y="62">1</text>
+    <text class="label-c01" style="fill:#16A34A; font-size:16px;" x="155" y="108">2</text>
+    <!-- Angle labels at bottom -->
+    <text class="label-c01" style="fill:#D92626; font-size:16px;" x="238" y="182">1</text>
+    <text class="label-c01" style="fill:#16A34A; font-size:16px;" x="215" y="228">2</text>
+    <!-- Intersection points -->
+    <circle fill="#E8943A" cx="183" cy="80" r="4" />
+    <circle fill="#E8943A" cx="243" cy="200" r="4" />
+    <!-- Labels for lines -->
+    <text class="label-c01" x="15" y="75">a</text>
+    <text class="label-c01" x="15" y="195">b</text>
+    <text class="label-c01" x="285" y="258">c</text>
+    <!-- Formulas -->
+    <text class="formula-c01" x="20" y="268">a || b: Відповідні кути рівні; Сума сусідніх = 180°</text>
+  </svg>
+  <br>
+  <button class="btn" onclick="downloadSVG(this, 'ch2_01_parallel_angles.svg')">Завантажити SVG</button>
+</div>
+
+<!-- 02 Трапеція -->
+<div class="card">
+  <h2>02. Трапеція: середня лінія та площа</h2>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+    <style>
+      .label-c02 { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+      .shape-c02 { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+      .midline-c02 { stroke: #D92626; stroke-width: 2.5; stroke-dasharray: 8,4; }
+      .height-c02 { stroke: #2563EB; stroke-width: 2; stroke-dasharray: 5,3; }
+      .formula-c02 { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+      .note-c02 { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+      .side-label-c02 { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    </style>
+    <!-- Trapezoid ABCD -->
+    <polygon class="shape-c02" points="80,200 130,60 300,60 340,200" />
+    <!-- Midline MN -->
+    <line class="midline-c02" x1="105" y1="130" x2="320" y2="130" />
+    <!-- Height h -->
+    <line class="height-c02" x1="220" y1="60" x2="220" y2="200" />
+    <!-- Right angle marks -->
+    <polyline fill="none" stroke="#2563EB" stroke-width="1.5" points="220,190 230,190 230,200" />
+    <polyline fill="none" stroke="#2563EB" stroke-width="1.5" points="220,70 230,70 230,60" />
+    <!-- Parallel marks on bases -->
+    <line stroke="#E8943A" stroke-width="2" x1="210" y1="55" x2="220" y2="55" />
+    <line stroke="#E8943A" stroke-width="2" x1="200" y1="195" x2="210" y2="195" />
+    <line stroke="#E8943A" stroke-width="2" x1="215" y1="195" x2="225" y2="195" />
+    <!-- Vertex labels -->
+    <text class="label-c02" x="60" y="218">A</text>
+    <text class="label-c02" x="115" y="50">B</text>
+    <text class="label-c02" x="305" y="50">C</text>
+    <text class="label-c02" x="345" y="218">D</text>
+    <!-- Midpoint labels -->
+    <text class="note-c02" x="85" y="125">M</text>
+    <text class="note-c02" x="325" y="125">N</text>
+    <!-- Side labels -->
+    <text class="side-label-c02" x="190" y="50">a</text>
+    <text class="side-label-c02" x="190" y="220">b</text>
+    <text class="side-label-c02" x="195" y="145">m</text>
+    <!-- Height label -->
+    <text class="side-label-c02" x="228" y="138" style="fill:#2563EB;">h</text>
+    <!-- Formula -->
+    <text class="formula-c02" x="40" y="260">m = (a+b)/2,   S = m·h = (a+b)·h/2</text>
+  </svg>
+  <br>
+  <button class="btn" onclick="downloadSVG(this, 'ch2_02_trapezoid.svg')">Завантажити SVG</button>
+</div>
+
+<!-- 03a Вписане коло в чотирикутник -->
+<div class="card">
+  <h2>03a. Вписане коло в чотирикутник</h2>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+    <style>
+      .label-c03a { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+      .shape-c03a { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+      .circle-c03a { fill: none; stroke: #2563EB; stroke-width: 2; }
+      .center-c03a { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
+      .radius-c03a { stroke: #D92626; stroke-width: 1.5; stroke-dasharray: 4,3; }
+      .tangent-c03a { fill: #2563EB; }
+      .formula-c03a { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+      .note-c03a { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+      .side-label-c03a { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    </style>
+    <!-- Quadrilateral ABCD -->
+    <polygon class="shape-c03a" points="70,180 120,50 320,60 350,200" />
+    <!-- Inscribed circle -->
+    <circle class="circle-c03a" cx="200" cy="130" r="68" />
+    <!-- Incenter -->
+    <circle class="center-c03a" cx="200" cy="130" r="4" />
+    <!-- Radius to bottom tangent -->
+    <line class="radius-c03a" x1="200" y1="130" x2="200" y2="198" />
+    <!-- Tangent points -->
+    <circle class="tangent-c03a" cx="200" cy="198" r="3" />
+    <circle class="tangent-c03a" cx="135" cy="108" r="3" />
+    <circle class="tangent-c03a" cx="265" cy="108" r="3" />
+    <circle class="tangent-c03a" cx="212" cy="62" r="3" />
+    <!-- Vertex labels -->
+    <text class="label-c03a" x="48" y="192">A</text>
+    <text class="label-c03a" x="105" y="42">B</text>
+    <text class="label-c03a" x="325" y="50">C</text>
+    <text class="label-c03a" x="355" y="215">D</text>
+    <!-- Center label -->
+    <text class="note-c03a" x="208" y="126">I</text>
+    <!-- Radius label -->
+    <text class="side-label-c03a" x="205" y="172" style="fill:#D92626;">r</text>
+    <!-- Side labels -->
+    <text class="side-label-c03a" x="75" y="110">a</text>
+    <text class="side-label-c03a" x="210" y="42">b</text>
+    <text class="side-label-c03a" x="345" y="125">c</text>
+    <text class="side-label-c03a" x="200" y="218">d</text>
+    <!-- Formula -->
+    <text class="formula-c03a" x="50" y="260">a + c = b + d</text>
+    <text class="formula-c03a" x="50" y="280">(Умова вписаного кола в чотирикутник)</text>
+  </svg>
+  <br>
+  <button class="btn" onclick="downloadSVG(this, 'ch2_03a_inscribed_quad.svg')">Завантажити SVG</button>
+</div>
+
+<!-- 03b Описане коло навколо чотирикутника -->
+<div class="card">
+  <h2>03b. Описане коло навколо чотирикутника</h2>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+    <style>
+      .label-c03b { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+      .shape-c03b { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+      .circle-c03b { fill: none; stroke: #D92626; stroke-width: 2; }
+      .center-c03b { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
+      .radius-c03b { stroke: #D92626; stroke-width: 1.5; stroke-dasharray: 4,3; }
+      .formula-c03b { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+      .note-c03b { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+      .side-label-c03b { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+      .angle-c03b { font-family: serif; font-size: 15px; fill: #2563EB; font-style: italic; }
+    </style>
+    <!-- Circumscribed circle -->
+    <circle class="circle-c03b" cx="200" cy="135" r="110" />
+    <!-- Quadrilateral inscribed in circle -->
+    <polygon class="shape-c03b" points="95,175 120,45 330,85 305,230" />
+    <!-- Center O -->
+    <circle class="center-c03b" cx="200" cy="135" r="4" />
+    <!-- Radii to vertices -->
+    <line class="radius-c03b" x1="200" y1="135" x2="95" y2="175" />
+    <line class="radius-c03b" x1="200" y1="135" x2="305" y2="230" />
+    <!-- Vertex labels -->
+    <text class="label-c03b" x="72" y="185">A</text>
+    <text class="label-c03b" x="108" y="38">B</text>
+    <text class="label-c03b" x="335" y="82">C</text>
+    <text class="label-c03b" x="310" y="248">D</text>
+    <!-- Center label -->
+    <text class="note-c03b" x="208" y="130">O</text>
+    <!-- Angle labels -->
+    <text class="angle-c03b" x="112" y="170">α</text>
+    <text class="angle-c03b" x="135" y="62">β</text>
+    <text class="angle-c03b" x="315" y="100">γ</text>
+    <text class="angle-c03b" x="292" y="222">δ</text>
+    <!-- Radius label -->
+    <text class="side-label-c03b" x="145" y="162" style="fill:#D92626;">R</text>
+    <!-- Formula -->
+    <text class="formula-c03b" x="40" y="275">α + γ = β + δ = 180° (вписаний чотирикутник)</text>
+  </svg>
+  <br>
+  <button class="btn" onclick="downloadSVG(this, 'ch2_03b_circumscribed_quad.svg')">Завантажити SVG</button>
+</div>
+
+<!-- 04a Правильний многокутник — Квадрат -->
+<div class="card">
+  <h2>04a. Правильний многокутник — Квадрат (n=4)</h2>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+    <style>
+      .label-c04a { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+      .shape-c04a { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+      .diag-c04a { stroke: #D92626; stroke-width: 1.5; stroke-dasharray: 6,3; }
+      .circle-in-c04a { fill: none; stroke: #2563EB; stroke-width: 1.5; }
+      .circle-out-c04a { fill: none; stroke: #D92626; stroke-width: 1.5; }
+      .center-c04a { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
+      .right-angle-c04a { fill: none; stroke: #2563EB; stroke-width: 1.5; }
+      .formula-c04a { font-family: sans-serif; font-size: 13px; fill: #2B2016; }
+      .note-c04a { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+      .side-label-c04a { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    </style>
+    <!-- Square -->
+    <polygon class="shape-c04a" points="100,60 300,60 300,220 100,220" />
+    <!-- Diagonals -->
+    <line class="diag-c04a" x1="100" y1="60" x2="300" y2="220" />
+    <line class="diag-c04a" x1="300" y1="60" x2="100" y2="220" />
+    <!-- Inscribed circle -->
+    <circle class="circle-in-c04a" cx="200" cy="140" r="80" />
+    <!-- Circumscribed circle -->
+    <circle class="circle-out-c04a" cx="200" cy="140" r="113" />
+    <!-- Center -->
+    <circle class="center-c04a" cx="200" cy="140" r="4" />
+    <!-- Right angle mark -->
+    <polyline class="right-angle-c04a" points="120,60 120,80 100,80" />
+    <!-- Vertex labels -->
+    <text class="label-c04a" x="82" y="52">A</text>
+    <text class="label-c04a" x="305" y="52">B</text>
+    <text class="label-c04a" x="305" y="238">C</text>
+    <text class="label-c04a" x="82" y="238">D</text>
+    <!-- Center label -->
+    <text class="note-c04a" x="208" y="136">O</text>
+    <!-- Side labels -->
+    <text class="side-label-c04a" x="195" y="52">a</text>
+    <!-- Diagonal label -->
+    <text class="side-label-c04a" x="240" y="120" style="fill:#D92626;">d</text>
+    <!-- Radius labels -->
+    <text class="side-label-c04a" x="205" y="100" style="fill:#2563EB;">r</text>
+    <text class="side-label-c04a" x="245" y="78" style="fill:#D92626;">R</text>
+    <!-- Formulas -->
+    <text class="formula-c04a" x="30" y="260">d = a√2,  S = a²,  r = a/2,  R = a√2/2</text>
+    <text class="formula-c04a" x="30" y="280">P = 4a,  α = 90°</text>
+  </svg>
+  <br>
+  <button class="btn" onclick="downloadSVG(this, 'ch2_04a_square.svg')">Завантажити SVG</button>
+</div>
+
+<!-- 04b Правильний многокутник — Шестикутник -->
+<div class="card">
+  <h2>04b. Правильний многокутник — Шестикутник (n=6)</h2>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+    <style>
+      .label-c04b { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+      .shape-c04b { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+      .radius-c04b { stroke: #D92626; stroke-width: 1.5; stroke-dasharray: 4,3; }
+      .circle-in-c04b { fill: none; stroke: #2563EB; stroke-width: 1.5; }
+      .circle-out-c04b { fill: none; stroke: #D92626; stroke-width: 1.5; }
+      .center-c04b { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
+      .formula-c04b { font-family: sans-serif; font-size: 13px; fill: #2B2016; }
+      .note-c04b { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+      .side-label-c04b { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    </style>
+    <!-- Regular hexagon -->
+    <polygon class="shape-c04b" points="300,140 250,227 150,227 100,140 150,53 250,53" />
+    <!-- Circumscribed circle -->
+    <circle class="circle-out-c04b" cx="200" cy="140" r="100" />
+    <!-- Inscribed circle -->
+    <circle class="circle-in-c04b" cx="200" cy="140" r="87" />
+    <!-- Center -->
+    <circle class="center-c04b" cx="200" cy="140" r="4" />
+    <!-- Radius to vertex -->
+    <line class="radius-c04b" x1="200" y1="140" x2="300" y2="140" />
+    <!-- Internal triangles -->
+    <line stroke="#C97820" stroke-width="1" x1="200" y1="140" x2="250" y2="53" />
+    <line stroke="#C97820" stroke-width="1" x1="200" y1="140" x2="150" y2="53" />
+    <!-- Vertex labels -->
+    <text class="label-c04b" x="305" y="145">A</text>
+    <text class="label-c04b" x="252" y="245">B</text>
+    <text class="label-c04b" x="128" y="245">C</text>
+    <text class="label-c04b" x="78" y="145">D</text>
+    <text class="label-c04b" x="128" y="46">E</text>
+    <text class="label-c04b" x="252" y="46">F</text>
+    <!-- Center label -->
+    <text class="note-c04b" x="208" y="136">O</text>
+    <!-- Side label -->
+    <text class="side-label-c04b" x="195" y="46">a</text>
+    <!-- Radius label -->
+    <text class="side-label-c04b" x="250" y="135" style="fill:#D92626;">R</text>
+    <!-- Apothem label -->
+    <text class="side-label-c04b" x="230" y="90" style="fill:#2563EB;">r</text>
+    <!-- Formulas -->
+    <text class="formula-c04b" x="20" y="268">R = a,  r = a√3/2,  S = 3a²√3/2</text>
+    <text class="formula-c04b" x="20" y="288">P = 6a,  α = 120°</text>
+  </svg>
+  <br>
+  <button class="btn" onclick="downloadSVG(this, 'ch2_04b_hexagon.svg')">Завантажити SVG</button>
+</div>
+
+<!-- 04c Правильний n-кутник -->
+<div class="card">
+  <h2>04c. Правильний n-кутник (загальні формули)</h2>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+    <style>
+      .label-c04c { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+      .shape-c04c { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+      .radius-c04c { stroke: #D92626; stroke-width: 1.5; stroke-dasharray: 4,3; }
+      .apothem-c04c { stroke: #2563EB; stroke-width: 2; stroke-dasharray: 4,3; }
+      .circle-in-c04c { fill: none; stroke: #2563EB; stroke-width: 1.5; }
+      .circle-out-c04c { fill: none; stroke: #D92626; stroke-width: 1.5; }
+      .center-c04c { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
+      .formula-c04c { font-family: sans-serif; font-size: 13px; fill: #2B2016; }
+      .note-c04c { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+      .side-label-c04c { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    </style>
+    <!-- Regular pentagon (n=5) as example -->
+    <polygon class="shape-c04c" points="200,35 290,100 256,200 144,200 110,100" />
+    <!-- Circumscribed circle -->
+    <circle class="circle-out-c04c" cx="200" cy="130" r="95" />
+    <!-- Inscribed circle -->
+    <circle class="circle-in-c04c" cx="200" cy="130" r="77" />
+    <!-- Center -->
+    <circle class="center-c04c" cx="200" cy="130" r="4" />
+    <!-- Radius R to vertex -->
+    <line class="radius-c04c" x1="200" y1="130" x2="200" y2="35" />
+    <!-- Apothem r to midpoint of bottom side -->
+    <line class="apothem-c04c" x1="200" y1="130" x2="200" y2="200" />
+    <!-- Central angle arc -->
+    <path fill="none" stroke="#C97820" stroke-width="1.5" d="M 200,105 A 25,25 0 0,1 218,115" />
+    <!-- Vertex labels -->
+    <text class="label-c04c" x="192" y="28">A</text>
+    <text class="label-c04c" x="295" y="100">B</text>
+    <text class="label-c04c" x="260" y="218">C</text>
+    <text class="label-c04c" x="122" y="218">D</text>
+    <text class="label-c04c" x="88" y="100">E</text>
+    <!-- Center label -->
+    <text class="note-c04c" x="208" y="126">O</text>
+    <!-- Side label -->
+    <text class="side-label-c04c" x="195" y="218">a</text>
+    <!-- Radius labels -->
+    <text class="side-label-c04c" x="205" y="75" style="fill:#D92626;">R</text>
+    <text class="side-label-c04c" x="205" y="175" style="fill:#2563EB;">r</text>
+    <!-- Central angle label -->
+    <text class="side-label-c04c" x="222" y="108">360°/n</text>
+    <!-- Formulas -->
+    <text class="formula-c04c" x="20" y="248">α = 180°(n−2)/n,  S = n·a·r/2 = P·r/2</text>
+    <text class="formula-c04c" x="20" y="268">r = R·cos(180°/n),  a = 2R·sin(180°/n)</text>
+    <text class="formula-c04c" x="20" y="288">P = n·a</text>
+  </svg>
+  <br>
+  <button class="btn" onclick="downloadSVG(this, 'ch2_04c_regular_ngon.svg')">Завантажити SVG</button>
+</div>
+
+<!-- 05 Площа трикутника через R -->
+<div class="card">
+  <h2>05. Площа трикутника через описане коло (S = abc/4R)</h2>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="400" height="280">
+    <style>
+      .label-c05 { font-family: serif; font-size: 18px; font-style: italic; fill: #2B2016; }
+      .shape-c05 { fill: #FEF0DC; stroke: #E8943A; stroke-width: 2.5; stroke-linejoin: round; }
+      .circle-c05 { fill: none; stroke: #D92626; stroke-width: 2; }
+      .center-c05 { fill: #D92626; stroke: #991B1B; stroke-width: 1.5; }
+      .radius-c05 { stroke: #D92626; stroke-width: 1.5; stroke-dasharray: 4,3; }
+      .height-c05 { stroke: #2563EB; stroke-width: 2; stroke-dasharray: 5,3; }
+      .formula-c05 { font-family: sans-serif; font-size: 14px; fill: #2B2016; }
+      .note-c05 { font-family: sans-serif; font-size: 13px; fill: #D92626; font-weight: bold; }
+      .side-label-c05 { font-family: sans-serif; font-size: 14px; fill: #C97820; font-weight: bold; }
+    </style>
+    <!-- Circumscribed circle -->
+    <circle class="circle-c05" cx="200" cy="115" r="105" />
+    <!-- Triangle -->
+    <polygon class="shape-c05" points="100,175 200,12 330,185" />
+    <!-- Center O -->
+    <circle class="center-c05" cx="200" cy="115" r="4" />
+    <!-- Radius to vertex B -->
+    <line class="radius-c05" x1="200" y1="115" x2="200" y2="12" />
+    <!-- Height from B to AC -->
+    <line class="height-c05" x1="200" y1="12" x2="200" y2="179" />
+    <!-- Right angle at foot of height -->
+    <polyline fill="none" stroke="#2563EB" stroke-width="1.5" points="200,169 210,169 210,179" />
+    <!-- Vertex labels -->
+    <text class="label-c05" x="78" y="190">A</text>
+    <text class="label-c05" x="193" y="8">B</text>
+    <text class="label-c05" x="335" y="200">C</text>
+    <!-- Center label -->
+    <text class="note-c05" x="208" y="110">O</text>
+    <!-- Height foot label -->
+    <text class="label-c05" x="205" y="195">H</text>
+    <!-- Side labels -->
+    <text class="side-label-c05" x="135" y="85">a</text>
+    <text class="side-label-c05" x="275" y="90">b</text>
+    <text class="side-label-c05" x="210" y="200">c</text>
+    <!-- Radius label -->
+    <text class="side-label-c05" x="205" y="68" style="fill:#D92626;">R</text>
+    <!-- Height label -->
+    <text class="side-label-c05" x="180" y="110" style="fill:#2563EB;">h</text>
+    <!-- Formulas -->
+    <text class="formula-c05" x="40" y="240">S = abc / (4R)</text>
+    <text class="formula-c05" x="40" y="260">S = (1/2) · c · h</text>
+  </svg>
+  <br>
+  <button class="btn" onclick="downloadSVG(this, 'ch2_05_area_circumradius.svg')">Завантажити SVG</button>
+</div>
+
+<script>
+function downloadSVG(btn, filename) {
+  const card = btn.closest('.card');
+  const svg = card.querySelector('svg');
+  const serializer = new XMLSerializer();
+  let source = serializer.serializeToString(svg);
+  source = '<?xml version="1.0" encoding="UTF-8"?>\n' + source;
+  const blob = new Blob([source], {type: 'image/svg+xml;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+
+<footer style="text-align: center; margin-top: 40px; color: #9B856A; font-size: 12px;">
+  Abitlly — НМТ Математика — Чіткод #2: Багатокутники та Кола
+</footer>
+</body>
+</html>
